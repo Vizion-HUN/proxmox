@@ -104,6 +104,31 @@ Then paste the output and the script to [Claude AI](https://claude.ai) with a me
 
 ---
 
+### Log Management
+
+The **CSV files** in `/root/log/` contain valuable historical trend data — do not rotate them. Even across 10 years with 5 drives, the total size stays well under 2 MB.
+
+The **run log** (`smart_check.log`) grows without long-term value and can be rotated safely. Create a logrotate config:
+
+```bash
+nano /etc/logrotate.d/smart_check
+```
+
+Add this content:
+```
+/root/log/smart_check.log {
+    weekly
+    rotate 12
+    compress
+    missingok
+    notifempty
+}
+```
+
+This keeps 12 weeks of compressed run logs and discards older ones, without touching the CSV files.
+
+---
+
 ### Complementing with smartd
 
 This script handles **slow degradation trends** (week-over-week changes). For **real-time catastrophic failure detection**, you can run the built-in `smartd` daemon alongside it with a minimal config:
@@ -214,6 +239,31 @@ smartctl -i /dev/sda
 
 Majd illeszd be az eredményt és a scriptet a [Claude AI](https://claude.ai)-ba egy ilyen üzenettel:
 > *„Ez a meghajtó nem ismerhető fel helyesen. Íme a smartctl kimenete és a script — kérlek egészítsd ki a gyártófelismerési logikát."*
+
+---
+
+### Naplófájlok Kezelése
+
+A `/root/log/` mappában lévő **CSV fájlok** értékes történeti adatokat tartalmaznak — ezeket ne rotáld. Még 10 év és 5 meghajtó esetén is az összes CSV mérete jócskán 2 MB alatt marad.
+
+A **futási napló** (`smart_check.log`) viszont hosszú távon értéktelen adatokat gyűjt, ezt érdemes rotálni. Hozz létre egy logrotate konfigurációt:
+
+```bash
+nano /etc/logrotate.d/smart_check
+```
+
+Tartalom:
+```
+/root/log/smart_check.log {
+    weekly
+    rotate 12
+    compress
+    missingok
+    notifempty
+}
+```
+
+Ez 12 hetet tárol tömörítve, a régebbieket elveti — a CSV fájlokat nem érinti.
 
 ---
 
