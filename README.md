@@ -1,4 +1,4 @@
-# 🖥️ SMART Monitor for Proxmox VE / Debian
+# 🖥️ SMART Check for Proxmox VE / Debian
 
 **[English](#english) | [Magyar](#magyar)**
 
