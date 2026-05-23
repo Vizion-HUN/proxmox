@@ -1,4 +1,4 @@
-# 🖥️ SMART Check for Proxmox VE / Debian
+# 🖥️ SMART Monitor for Proxmox VE / Debian
 
 **[English](#english) | [Magyar](#magyar)**
 
@@ -49,13 +49,13 @@ chmod +x /root/smart_check.sh
 mkdir -p /root/log
 ```
 
-**4. Add to crontab** (runs daily at 02:00)
+**4. Add to crontab** (runs weekly, every Sunday at 02:00)
 ```bash
 crontab -e
 ```
 Add this line:
 ```
-0 2 * * * /root/smart_check.sh >> /root/log/smart_check.log 2>&1
+0 2 * * 0 /root/smart_check.sh >> /root/log/smart_check.log 2>&1
 ```
 
 ---
@@ -162,13 +162,13 @@ chmod +x /root/smart_check.sh
 mkdir -p /root/log
 ```
 
-**4. Hozzáadás a crontab-hoz** (minden nap 02:00-kor fut)
+**4. Hozzáadás a crontab-hoz** (hetente egyszer, vasárnap hajnali 02:00-kor fut)
 ```bash
 crontab -e
 ```
 Add hozzá ezt a sort:
 ```
-0 2 * * * /root/smart_check.sh >> /root/log/smart_check.log 2>&1
+0 2 * * 0 /root/smart_check.sh >> /root/log/smart_check.log 2>&1
 ```
 
 ---
