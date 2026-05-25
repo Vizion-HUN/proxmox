@@ -36,7 +36,7 @@ This script monitors the health of your hard drives (HDD, SSD, NVMe) on Proxmox 
 
 **1. Download the script**
 ```bash
-wget -O /root/smart_check.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/smart_check.sh
+wget -O /root/smart_check.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/smart%20check/smart_check.sh
 ```
 
 **2. Make it executable**
@@ -163,7 +163,7 @@ Example output in the email:
 
 **1. Download the script**
 ```bash
-wget -O /root/smart_report.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/smart_report.sh
+wget -O /root/smart_report.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/smart%20check/smart_report.sh
 ```
 
 **2. Make it executable**
@@ -214,7 +214,7 @@ Ez a script figyeli a számítógép merevlemezeinek (HDD, SSD, NVMe) egészség
 
 **1. Script letöltése**
 ```bash
-wget -O /root/smart_check.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/smart_check.sh
+wget -O /root/smart_check.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/smart%20check/smart_check.sh
 ```
 
 **2. Futtathatóvá tétel**
@@ -341,7 +341,7 @@ Példa az e-mail tartalmára:
 
 **1. Script letöltése**
 ```bash
-wget -O /root/smart_report.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/smart_report.sh
+wget -O /root/smart_report.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/smart%20check/smart_report.sh
 ```
 
 **2. Futtathatóvá tétel**
