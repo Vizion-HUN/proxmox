@@ -19,7 +19,8 @@ Designed primarily to make home server (Homelab) management, backups and monitor
 | `lxc/` | Container-specific tweaks and configurations (Alpine Linux, Docker, etc.). |
 
 ### ⚠️ Disclaimer
-**Use at your own risk!** These scripts are actively tested and used in my personal environment; however, unexpected bugs or incompatibilities may still occur. 
+**Use at your own risk!** 
+These scripts are actively tested and used in my personal environment; however, unexpected bugs or incompatibilities may still occur. 
 They are shared for educational and personal use. Always review the code before running it on your production systems. 
 The author is not responsible for any data loss, hardware damage, or system instability.
 ---
