@@ -1,12 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# felkiáltójeles mappák kezelése, előzmény-kiterjesztés kikapcsolása
 set +H
 set -uo pipefail
 
+# Konfiguráció
 external_mount="/mnt/external_hdd"
 source_backup="/mnt/ssd_backup/NAS_backup/"
 dest_backup="/mnt/external_hdd/NAS_backup/"
 start_time=$(date "+%Y-%m-%d %H:%M:%S")
-log_file="/root/log/external_sync.log"
+# log fájl helye
+log_dir="/root/log"
+log_file="${log_dir}/external_sync.log"
+# Log mappa létrehozása, ha nem létezik
+mkdir -p "$log_dir"
 
 # HDD csatolás - ha nincs bedugva, csendben kilép
 mount "$external_mount" 2>/dev/null
@@ -18,7 +24,6 @@ fi
 rsync -avh --hard-links --delete \
   "$source_backup" "$dest_backup" \
   > "$log_file" 2>&1
-
 exit_code=$?
 
 end_time=$(date "+%Y-%m-%d %H:%M:%S")
@@ -33,6 +38,7 @@ else
 fi
 
 log_tail=$(tail -n 5 "$log_file")
+
 mail_body="Mentés kezdete: $start_time
 Mentés vége: $end_time
 $status
