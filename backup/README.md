@@ -48,7 +48,7 @@ If you have many folders to back up, consider splitting them across multiple scr
 
 **1. Download the script**
 ```bash
-wget -O /root/backup.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/backup.sh
+wget -O /root/backup.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/backup/backup.sh
 ```
 
 **2. Make it executable**
@@ -115,7 +115,7 @@ blkid
 
 **1. Download the script**
 ```bash
-wget -O /root/external_sync.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/external_sync.sh
+wget -O /root/external_sync.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/backup/external_sync.sh
 ```
 
 **2. Make it executable**
@@ -214,7 +214,7 @@ Ha sok mappát kell menteni, érdemes több scriptre osztani (pl. `backup1.sh`, 
 
 **1. Script letöltése**
 ```bash
-wget -O /root/backup.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/backup.sh
+wget -O /root/backup.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/backup/backup.sh
 ```
 
 **2. Futtathatóvá tétel**
@@ -281,7 +281,7 @@ blkid
 
 **1. Script letöltése**
 ```bash
-wget -O /root/external_sync.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/external_sync.sh
+wget -O /root/external_sync.sh https://raw.githubusercontent.com/Vizion-HUN/proxmox/main/backup/external_sync.sh
 ```
 
 **2. Futtathatóvá tétel**
