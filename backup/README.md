@@ -100,10 +100,13 @@ Syncs the entire backup destination to an external USB HDD. The drive is automat
 
 ### fstab Configuration (Required)
 
-The external HDD must be listed in `/etc/fstab` with the `noauto` option so it is not mounted at boot but can be mounted on demand by the script:
+The external HDD must be listed in `/etc/fstab` with the `noauto` option so it is not mounted at boot but can be mounted on demand by the script. Sample fstab line:
 
 ```
 UUID=your-drive-uuid  /mnt/external_hdd  ntfs-3g  defaults,noauto  0  0
+or this
+vagy például
+UUID=your-drive-uuid  /mnt/external_hdd  ext4  defaults,noatime,noexec,nodev,nosuid,noauto,nofail  0  0
 ```
 
 Find your drive's UUID:
@@ -266,10 +269,12 @@ A teljes backup célt szinkronizálja egy külső USB HDD-re. A meghajtó automa
 
 ### fstab konfiguráció (szükséges)
 
-A külső HDD-nek szerepelnie kell az `/etc/fstab`-ban `noauto` opcióval — így nem csatolódik rendszerindításkor, de a script igény szerint csatolhatja:
+A külső HDD-nek szerepelnie kell az `/etc/fstab`-ban `noauto` opcióval — így nem csatolódik rendszerindításkor, de a script igény szerint csatolhatja. Példa fstab csatolásra:
 
 ```
 UUID=a-meghajtó-uuid-ja  /mnt/external_hdd  ntfs-3g  defaults,noauto  0  0
+vagy például
+UUID=a-meghajtó-uuid-ja  /mnt/external_hdd  ext4  defaults,noatime,noexec,nodev,nosuid,noauto,nofail  0  0
 ```
 
 A meghajtó UUID-jának lekérdezése:
