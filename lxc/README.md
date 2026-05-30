@@ -22,7 +22,6 @@ Designed for **manual execution**: run it when you want a full system update, re
 
 | Step | Details |
 |---|---|
-| Disk usage (before) | Shown for comparison |
 | Update & Upgrade | `apk` (Alpine) or `apt-get` (Debian/Ubuntu) |
 | Cache clean | APT cache / apk cache |
 | Old logs | Files older than 7 days removed from `/var/log` |
@@ -30,7 +29,6 @@ Designed for **manual execution**: run it when you want a full system update, re
 | Docker cleanup | Dangling (unreferenced) images and build cache pruned — **images belonging to any container (running or stopped) are NOT removed** |
 | nerdctl cleanup | Same as Docker, for Alpine + nerdctl/containerd |
 | Failed services | Listed in log (not fixed automatically) |
-| Disk usage (after) | Shown for comparison |
 | fstrim | Run on each container's storage |
 
 ---
@@ -103,7 +101,6 @@ Az `allupdate.sh` egy átfogó karbantartó script Proxmox VE-hez, amely egyetle
 
 | Lépés | Részletek |
 |---|---|
-| Lemezhasználat (előtte) | Összehasonlításhoz |
 | Update & Upgrade | `apk` (Alpine) vagy `apt-get` (Debian/Ubuntu) |
 | Cache tisztítás | APT cache / apk cache |
 | Régi logok | 7 napnál régebbi fájlok törlése a `/var/log`-ból |
@@ -111,7 +108,6 @@ Az `allupdate.sh` egy átfogó karbantartó script Proxmox VE-hez, amely egyetle
 | Docker cleanup | Csak a "dangling" (sehova sem hivatkozott) image-ek és build cache törlése — **leállított containerekhez tartozó image-ek NEM törlődnek** |
 | nerdctl cleanup | Mint Docker, Alpine + nerdctl/containerd esetén |
 | Hibás szolgáltatások | Naplózva (nem javítja automatikusan) |
-| Lemezhasználat (utána) | Összehasonlításhoz |
 | fstrim | Lefut minden container storage-án |
 
 ---
