@@ -27,11 +27,6 @@ function clean_lxc() {
 
   log "\n${BL}[Info]${GN} === Container $container ($name | $os) ===${CL}"
 
-  # Disk usage before
-  local disk_before
-  disk_before=$(pct exec "$container" -- df -h / 2>/dev/null | awk 'NR==2 {print $3 " / " $2}')
-  log "${BL}[Info]${CL} Disk before: ${RD}$disk_before${CL}"
-
   if [ "$os" == "alpine" ]; then
     pct exec "$container" -- ash -c '
       echo "--- Update ---"
@@ -95,11 +90,6 @@ function clean_lxc() {
       systemctl --failed --no-legend 2>/dev/null | grep -v "^$" || echo "None"
     ' 2>&1 | while IFS= read -r line; do log "  $line"; done
   fi
-
-  # Disk usage after
-  local disk_after
-  disk_after=$(pct exec "$container" -- df -h / 2>/dev/null | awk 'NR==2 {print $3 " / " $2}')
-  log "${BL}[Info]${CL} Disk after:  ${GN}$disk_after${CL}"
 
   # fstrim
   log "${BL}[Info]${CL} Running fstrim..."
